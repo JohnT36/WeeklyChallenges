@@ -24,6 +24,7 @@ namespace ChallengesWithTestsMark8
         public int Add(int number1, int number2)
         {
             return number1 + number2;
+
         }
 
         public int GetSmallestNumber(int number1, int number2)
