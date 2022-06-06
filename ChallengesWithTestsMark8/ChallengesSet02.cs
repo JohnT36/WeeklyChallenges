@@ -69,9 +69,9 @@ namespace ChallengesWithTestsMark8
         public int Sum(int[] numbers)
         {
             return numbers == null ? 0 : numbers.Sum();
-            if (numbers == null)
-            { return 0; }
-            return numbers.Sum();
+          //if (numbers == null)
+         // { return 0; }
+         // return numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
@@ -110,7 +110,9 @@ namespace ChallengesWithTestsMark8
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            return number <0 ? 0 : number / 2;
+          return number <0 ? 0 : number / 2;
+
+            
         }
     }
 }
