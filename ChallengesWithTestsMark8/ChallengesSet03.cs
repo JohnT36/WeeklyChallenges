@@ -8,25 +8,26 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
+#pragma warning disable CS0162 // Unreachable code detected
             for (int i = 0; i < vals.Length; i++)
-
-            if (vals[i] == false)
             {
-                return true;
-            }
-            return false;
-        }
+                if (vals[i] == false)
+                {
+                    return true;
+                }
+                
+            } return false;
+#pragma warning restore CS0162 // Unreachable code detected
 
+        }
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
             if (numbers == null || numbers.Count() == 0)
-            {
-                return false;
-            }
-            var sum = numbers.Sum();
+            { return false; }
 
+            var sum = numbers.Sum();
             return sum % 2 != 0;
-            
+
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
@@ -43,60 +44,56 @@ namespace ChallengesWithTestsMark8
                 { isUpper = true; }
                 if (char.IsNumber(password[i]))
                 { isNumber = true; }
-
             }
-
-            if (isLower && isUpper && isNumber)
-            {
-                return true;
-            }
-            else 
-                { return false; }
+            if (isLower && isUpper && isNumber )
+                { return true; }
+             return false;
         }
 
         public char GetFirstLetterOfString(string val)
         {
             return val.First();
+            // return val[0];
+            //return val.First();
         }
 
         public char GetLastLetterOfString(string val)
         {
-            return val.Last();
+            return val[^1];
+            //return val.Last();
+            //return val[val.Length - 1]);
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
             if (divisor == 0)
             { return 0; }
-
             return dividend / divisor;
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            return nums[nums.Length - 1] - nums[0];
+            return nums[^1] - nums[0];
         }
 
         public int[] GetOddsBelow100()
         {
-            var oddList = new List<int>();
-
-            for(int i = 0; i < 100; i++)
+            var oddSum = new List<int>();
+            
+            for (int i = 0; i < 100; i++)
             {
-                if(i % 2 != 0)
+                if (i % 2 != 0)
                 {
-                    oddList.Add(i);
+                    oddSum.Add(i);
                 }
             }
-            return oddList.ToArray();
+            return oddSum.ToArray();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            for(int i = 0; i < words.Length; i++)
-            {
+            for (int i = 0; i < words.Length; i++)
                 words[i] = words[i].ToUpper();
-            }
         }
     }
 }
