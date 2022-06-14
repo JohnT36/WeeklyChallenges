@@ -30,7 +30,7 @@ namespace ChallengesWithTestsMark8
             var list = new List<int>() { number1, number2, number3, number4 };
             return list.Min();
         }
-
+                                            //press ctrl + Business to redirect pag
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
             biz.Name = "TrueCoders";

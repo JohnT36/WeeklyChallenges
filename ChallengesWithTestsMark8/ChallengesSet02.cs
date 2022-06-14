@@ -13,15 +13,16 @@ namespace ChallengesWithTestsMark8
         
         public bool CountOfElementsIsEven(string[] vals)
         {
+            return vals.Length % 2 == 0;
             //or use this code
-            //return vals.Length % 1 == 0;
-            if (vals.Length % 2 == 0)
-                return true;
-            return false;
+            //if (vals.Length % 2 == 0)
+            //    return true;
+            //return false;
         }
 
         public bool IsNumberEven(int number)
         {
+            // return (number % 2 == 0) ? true : false;
             //return (number % 2 == 0);
             if (number % 2 == 0)
                 return true;
@@ -30,6 +31,7 @@ namespace ChallengesWithTestsMark8
 
         public bool IsNumberOdd(int num)
         {
+            //return (number % 2 != 0) ? true : fasle;
             //return (number % 2 != 0)
             if (num % 2 != 0)
                 return true;
@@ -42,20 +44,11 @@ namespace ChallengesWithTestsMark8
             //return numbers == null || numbers.Count() == 0
             // ? 0 : numbers.Min() + numbers.Max();
             if (numbers == null || numbers.Count() == 0) { return 0; }
-            var small = double.MaxValue;
-            var large = double.MinValue;
-        for (int i = 0; i < numbers.Count(); i++)
-            {
-                if (numbers.ElementAt(i) < small)
-                {
-                    small = numbers.ElementAt(i);
-                }
-                if (numbers.ElementAt(i) > large)
-                {
-                    large = numbers.ElementAt(i);
-                }
-            }
+            var large = numbers.Min();
+            var small = numbers.Max();
+
             return small + large;
+        
         }
 
         public int GetLengthOfShortestString(string str1, string str2)

@@ -10,13 +10,19 @@ namespace ChallengesWithTestsMark8
 
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            
-            for (int i = 0; i < vals.Length; i++)
-            {
-                if (vals[i] == false)
+             foreach (var x in vals)
+             { if (x == false)
+                {
                     return true;
-            }
-            return false;
+                }
+             } return false;
+
+        // for (int i = 0; i < vals.Length; i++)
+        // {
+        //     if (vals[i] == false)
+        //         return true;
+        // }
+        // return false;
         }
 
 
@@ -24,9 +30,20 @@ namespace ChallengesWithTestsMark8
         {
             if (numbers == null || numbers.Count() == 0)
                 return false;
+         //   
+         //       var sum = numbers.Sum();
+         //   return sum % 2 != 0;
+            var sum = 0;
+            foreach (int x in numbers)
+            {
+                if (x % 2 != 0)
+                { sum += x; }
+
+            }
+                return sum % 2 != 0 ? true : false;
             
-                var sum = numbers.Sum();
-            return sum % 2 != 0;
+              
+
 
 
             
@@ -49,9 +66,8 @@ namespace ChallengesWithTestsMark8
                 if (Char.IsNumber(password[i]))
                     number = true;
              }
-            
-            if (upper && lower && number) return true;
-            return false;
+
+            return upper && lower && number ;
 
         }
 
@@ -59,14 +75,16 @@ namespace ChallengesWithTestsMark8
 
         public char GetFirstLetterOfString(string val)
         {
-            return val.First();
+            return val[0];
+            //return val.First();
         }
 
 
 
         public char GetLastLetterOfString(string val)
         {
-            return val[val.Length - 1];
+
+            return (val[val.Length - 1]);
         }
 
 
