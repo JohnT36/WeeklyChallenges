@@ -10,45 +10,50 @@ namespace ChallengesWithTestsMark8
 
         public bool ArrayContainsAFalse(bool[] vals)
         {
-             foreach (var x in vals)
+            return vals.Contains(false);
+           // return vals.Any(x => x == false);
+            /* foreach (var x in vals)
              { if (x == false)
                 {
                     return true;
                 }
-             } return false;
+             } return false;*/
 
-        // for (int i = 0; i < vals.Length; i++)
-        // {
-        //     if (vals[i] == false)
-        //         return true;
-        // }
-        // return false;
+            // for (int i = 0; i < vals.Length; i++)
+            // {
+            //     if (vals[i] == false)
+            //         return true;
+            // }
+            // return false;
         }
 
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            if (numbers == null || numbers.Count() == 0)
-                return false;
-         //   
-         //       var sum = numbers.Sum();
-         //   return sum % 2 != 0;
-            var sum = 0;
-            foreach (int x in numbers)
-            {
-                if (x % 2 != 0)
-                { sum += x; }
+            return numbers == null ? false :
+                numbers.Where(num => num % 2 != 0).Sum() % 2 != 0;
 
-            }
-                return sum % 2 != 0 ? true : false;
-            
-              
+          //  if (numbers == null || numbers.Count() == 0)
+          //      return false;
+          //      
+          //          var sum = numbers.Sum();
+          //      return sum % 2 != 0;
+          //  var sum = 0;
+          //  foreach (int x in numbers)
+          //  {
+          //      if (x % 2 != 0)
+          //      { sum += x; }
+          //
+          //  }
+          //  return sum % 2 != 0 ? true : false;
+          //
 
 
 
-            
+
+
         }
-
+      
 
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
@@ -57,19 +62,18 @@ namespace ChallengesWithTestsMark8
             var lower = false;
             var number = false;
 
-            for (int i = 0; i < password.Length; i++)
+            foreach(char x in password)
             {
-                if (Char.IsLower(password[i]))
-                    lower = true;
-                if (Char.IsUpper(password[i]))
-                    upper = true;
-                if (Char.IsNumber(password[i]))
-                    number = true;
-             }
+                if (char.IsUpper(x)) upper = true; 
+                if (char.IsLower(x)) lower = true; 
+                if (char.IsDigit(x)) number = true;
 
-            return upper && lower && number ;
-
+            }
+            return upper && lower && number;
         }
+        
+
+
 
 
 
@@ -91,35 +95,40 @@ namespace ChallengesWithTestsMark8
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            if (divisor == 0)
-                return 0;
-            return dividend / divisor;
+            return divisor == 0 ? 0 : dividend / divisor;
+           // if (divisor == 0)
+           //     return 0;
+           // return dividend / divisor;
         }
 
 
 
         public int LastMinusFirst(int[] nums)
         {
-            return nums[^1] - nums[0];
+          //  return nums[^1] - nums[0];
+            return nums[nums.Length - 1] - nums[0];
         }
 
 
 
         public int[] GetOddsBelow100()
         {
-            var odds = new List<int>();
+            return Enumerable.Range(1, 100).Where(x => x % 2 != 0).ToArray();
+           /* var odds = new List<int>();
 
             for (int i = 0; i < 100; i++)
             {
                 if (i % 2 != 0) odds.Add(i);
             }
-            return odds.ToArray();
+            return odds.ToArray();*/
         }
 
 
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
+
+            
             for (int i = 0; i < words.Length; i++)
             {
                 words[i] = words[i].ToUpper();

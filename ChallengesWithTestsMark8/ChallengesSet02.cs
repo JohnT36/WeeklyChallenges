@@ -31,6 +31,7 @@ namespace ChallengesWithTestsMark8
 
         public bool IsNumberOdd(int num)
         {
+            
             //return (number % 2 != 0) ? true : fasle;
             //return (number % 2 != 0)
             if (num % 2 != 0)
@@ -68,7 +69,7 @@ namespace ChallengesWithTestsMark8
         }
 
         public int SumEvens(int[] numbers)
-        {
+        {                       //LINQ
             //return numbers == null ? 0 : numbers.Where(num => num % 2 == 0).Sum();
             if (numbers == null)
             {
@@ -103,7 +104,9 @@ namespace ChallengesWithTestsMark8
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-          return number <0 ? 0 : number / 2;
+
+
+          return number < 0 ? 0 : number / 2;
 
             
         }
